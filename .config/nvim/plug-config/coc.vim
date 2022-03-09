@@ -1,0 +1,1 @@
+/home/cow/.config/nvim/plug-config/coc.vim
