@@ -14,6 +14,7 @@ source ~/.config/nvim/plug-config/coc.vim
 :set title
 :set expandtab
 :set termguicolors
+:set shortmess+=A
 
 set background=dark
 let g:indent_guides_start_level = 2
