@@ -1,0 +1,11 @@
+{
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "emmet.includeLanguages": ["javascript", "typescript", "scss"],
+	"coc.preferences.formatOnSaveFiletypes": ["php", "twig", "javascript", "scss", "markdown"],
+	"css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelintplus.autoFixOnSave": true,
+	"stylelintplus.validateOnSave": true
+}
