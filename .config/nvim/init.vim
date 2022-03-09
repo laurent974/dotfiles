@@ -86,8 +86,8 @@ syntax enable
 set winblend=0
 set wildoptions=pum
 set pumblend=5
-let g:neosolarized_termtrans=1
-let g:tokyonight_transparent=1
+" let g:neosolarized_termtrans=1
+" let g:tokyonight_transparent=1
 colorscheme nord
 let g:airline_theme='nord'
 " let g:lightline = {'colorscheme': 'tokyonight'}
@@ -113,6 +113,8 @@ let g:airline#extensions#tabline#show_close_button = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#excmide_buffers = 1
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_section_z=''
+
 let NERDTreeShowHidden=1
 
 let g:better_whitespace_filetypes_blacklist=['diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'fugitive', 'dashboard']
@@ -225,4 +227,3 @@ let g:dashboard_custom_header = [
 \]
 
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
-

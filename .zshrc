@@ -111,6 +111,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias v="nvim"
 alias lc="colorls"
+alias ll="lc -la"
+alias ls="lc"
 alias tx=tmuxinator
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
