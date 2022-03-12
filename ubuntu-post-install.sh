@@ -1,3 +1,7 @@
 #!/bin/bash
 
-sudo apt install neovim
+# Update
+sudo apt update
+
+# Install all packages
+sudo apt install git neovim
