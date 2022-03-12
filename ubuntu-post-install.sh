@@ -7,9 +7,10 @@ fi
 
 # Update
 apt update -y
+apt upgrade -y
 
 # Install all packages
-apt install neovim -y
+apt install curl neovim -y
 
 # Make config directory for Neovim's init.vim
 echo '[*] Creation du dossier de configuration de nvim'
@@ -50,5 +51,5 @@ echo -e "[+] Done, welcome to your new \033[1m\033[92mNeovim\033[0m experience! 
 
 # Install nodejs
 echo '[*] Installation de nodejs'
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+apt install -y nodejs
