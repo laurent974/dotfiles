@@ -67,4 +67,4 @@ apt install -y nodejs
 
 npm install -g yarn
 
-(cd ~/.config/nvim/plug-config && yarn install)
+(cd ~/.vim/plugged/coc.nvim && yarn install)
