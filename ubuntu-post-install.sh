@@ -26,7 +26,7 @@ function all_installer() {
 
 if [ $# -eq 0 ]
 then
-  all_installer()
+  all_installer
 fi
 
 function update() {
