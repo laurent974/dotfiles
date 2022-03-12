@@ -1,4 +1,4 @@
-# Installation des dotfiles
+# Installation d'un nouvelle environnement Ubuntu
 
 Ce repo est destiné à l'installation des dotfiles sur un Ubuntu (20.04) vierge
 
