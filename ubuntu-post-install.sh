@@ -27,8 +27,8 @@ if [ -f ~/.config/nvim/coc-settings.json ]; then
 fi
 
 # Copy coc-settings.json in current working directory to nvim's config location. This is for custom diagnostic signs
-echo '[*] Copying coc-settings.json -> ~/.config/nvim/coc-settings.json'
-cp coc-settings.json ~/.config/nvim/
+echo '[*] Copying .config folder .config -> ~/.config'
+cp .config ~/.config
 
 # Create a backup of your current init.vim if you have one
 if [ -f ~/.config/nvim/init.vim ]; then
@@ -38,7 +38,7 @@ fi
 
 # Enter Neovim and install plugins with vim-plug's :PlugInstall and coc extensions with CoC's :CocInstall using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
 echo -e '[*] Running :PlugInstall within nvim ...'
-sed '/call plug#end/q' init.vim > ~/.config/nvim/init.vim
+sed '/call plug#end/q' /.config/nvim/init.vim > ~/.config/nvim/init.vim
 nvim -c 'PlugInstall' -c 'qa'
 rm ~/.config/nvim/init.vim
 
