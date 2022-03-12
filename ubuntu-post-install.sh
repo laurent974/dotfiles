@@ -26,7 +26,7 @@ apt install curl-y
 
 # Make config directory for Neovim's init.vim
 echo '${RED}[*] Installation de nvim${NC}'
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/plug-config
 
 # Install vim-plug plugin manager
 echo '${RED}[*] Téléchargement de vim-plug${NC}'
