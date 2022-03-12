@@ -71,6 +71,7 @@ npm install -g yarn
 (cd ~/.vim/plugged/coc.nvim && yarn install)
 
 echo '${RED}Installation OhMyZSH'
-chsh -s $(which zsh)
 cp .zshrc ~/
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+chsh -s $(which zsh)
 source .zshrc
