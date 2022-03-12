@@ -22,7 +22,8 @@ apt-get update -y
 apt-get install neovim -y
 
 # Install all packages
-apt install curl-y
+apt install curl -y
+apt-get install zsh -y
 
 # Make config directory for Neovim's init.vim
 echo '${RED}[*] Installation de nvim${NC}'
@@ -61,10 +62,15 @@ cp .config/nvim/init.vim ~/.config/nvim/
 echo -e "${RED}[+] Installation de neovim terminé.${NC}"
 
 # Install nodejs
-echo '[*] Installation de nodejs${NC}'
+echo '${RED}[*] Installation de nodejs${NC}'
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 apt install -y nodejs
 
 npm install -g yarn
 
 (cd ~/.vim/plugged/coc.nvim && yarn install)
+
+echo '${RED}Installation OhMyZSH'
+chsh -s $(which zsh)
+cp .zshrc ~/
+source .zshrc
