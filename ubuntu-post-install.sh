@@ -1,7 +1,12 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo "Ce script doit etre lancé en root"
+  exit
+fi
+
 # Update
-sudo apt update
+apt update
 
 # Install all packages
-sudo apt install git neovim
+apt install neovim
