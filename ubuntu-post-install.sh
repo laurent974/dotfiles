@@ -114,16 +114,26 @@ function tmux_installer() {
 # Boucle qui va determiner les packages à installer
 OPTS=$( getopts -o h -l nvim,omzsh,tmux: -- "$@" )
 while true ; do
-  case '$1' in
-    -h) help;
-      exit 0;
-    --nvim) neovim_install;
-      shift;;
-    --ohmzsh) ohmzsh_install;
-      shift;;
-    --tmux) tmux_install;
-      shift;;
-    --) shift; break;;
+  case "$1" in
+    "-h") help
+      exit 0
+      ;;
+    "--nvim")
+      neovim_installer
+      shift
+      ;;
+    "--ohmzsh")
+      ohmzsh_installer
+      shift
+      ;;
+    "--tmux")
+      tmux_installer
+      shift
+      ;;
+    "--")
+      shift
+      break
+      ;;
   esac
 done
 
