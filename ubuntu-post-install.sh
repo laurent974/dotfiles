@@ -15,7 +15,9 @@ apt update -y
 apt upgrade -y
 
 # Install Neovim
-add-apt-repository ppa:neovim-ppa/unstable
+apt-get install software-properties-common -y
+apt-get install python-software-properties -y
+add-apt-repository ppa:neovim-ppa/stable -y
 apt-get update -y
 apt-get install neovim -y
 
@@ -62,3 +64,7 @@ echo -e "${RED}[+] Installation de neovim terminé.${NC}"
 echo '[*] Installation de nodejs${NC}'
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 apt install -y nodejs
+
+npm install -g yarn
+
+(cd ~/.config/nvim/plug-config && yarn install)
