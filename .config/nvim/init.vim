@@ -63,6 +63,7 @@ Plug 'https://github.com/ntpeters/vim-better-whitespace'
 Plug 'https://github.com/kien/rainbow_parentheses.vim'
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'
 Plug 'https://github.com/neoclide/coc.nvim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Notes
 Plug 'https://github.com/xolox/vim-notes'
@@ -157,6 +158,8 @@ nnoremap <F6> :sp<CR>:terminal<CR>
 nnoremap <S-Tab> gT
 nnoremap <Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " Emmet
 let g:user_emmet_leader_key='<C-y>'
@@ -167,29 +170,40 @@ let g:dashboard_default_executive ='telescope'
 " Tab activated by default
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_blankline_buftype_exclude = ['dashboard']
-let g:indent_blankline_filetype_exclude = ['dashboard', 'NerdTree']
+let g:indent_blankline_filetype_exclude = ['dashboard', 'NERDTree']
 " let g:indent_blankline_context_patterns = [ 'class', 'return', 'function', 'method', '^if', '^while', 'jsx_element', '^for', '^object', '^table', 'block',
 "    'arguments', 'if_statement', 'else_clause', 'jsx_element', 'jsx_self_closing_element', 'try_statement',
 "    'catch_clause', 'import_statement', 'operation_type' ]
 
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
 
 lua << EOF
 vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
 
+vim.opt.termguicolors = true
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#5E81AC gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#81A1C1 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#88C0D0 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#8FBCBB gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
 require("indent_blankline").setup {
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-  context_patterns = {
-    "class", "function", "method", "block", "list_literal", "selector",
-    "^if", "^table", "if_statement", "while", "for",  "type", "var",
-    "import", "declaration", "expression", "pattern", "primary_expression",
-    "statement", "switch_body"
-  },
+    space_char_blankline = " ",
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+ --       "IndentBlanklineIndent5",
+--        "IndentBlanklineIndent6",
+    },
 }
+
 
 require('neoscroll').setup({
     -- All these keys will be mapped to their corresponding default scrolling animation
