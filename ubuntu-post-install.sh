@@ -28,7 +28,7 @@ fi
 
 # Copy coc-settings.json in current working directory to nvim's config location. This is for custom diagnostic signs
 echo '[*] Copying .config folder .config -> ~/.config'
-cp /.config/nvim/plug-config/coc.vim ~/.config
+cp .config/nvim/plug-config/coc.vim ~/.config/nvim/plug-config/
 
 # Create a backup of your current init.vim if you have one
 if [ -f ~/.config/nvim/init.vim ]; then
@@ -38,13 +38,13 @@ fi
 
 # Enter Neovim and install plugins with vim-plug's :PlugInstall and coc extensions with CoC's :CocInstall using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
 echo -e '[*] Running :PlugInstall within nvim ...'
-sed '/call plug#end/q' /.config/nvim/init.vim > ~/.config/nvim/init.vim
+sed '/call plug#end/q' .config/nvim/init.vim > ~/.config/nvim/init.vim
 nvim -c 'PlugInstall' -c 'qa'
 rm ~/.config/nvim/init.vim
 
 # Copy init.vim in current working directory to nvim's config location
 echo '[*] Copying init.vim -> ~/.config/nvim/init.vim'
-cp /.config/nvim/init.vim ~/.config/nvim/
+cp .config/nvim/init.vim ~/.config/nvim/
 
 echo -e "[+] Done, welcome to your new \033[1m\033[92mNeovim\033[0m experience! Try it by running: nvim. Want to customize it? Modify ~/.config/nvim/init.vim! Remember to change your terminal font to Iosevka Term Nerd Font, or any other preferred nerd font :)"
 
